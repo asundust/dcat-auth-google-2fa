@@ -1,0 +1,25 @@
+<?php
+
+return [
+    '2fa_code' => 'Google 2FA Code',
+    '2fa_bind' => 'Binding Google 2FA',
+    '2fa_bind_confirm' => 'Are you sure you want to bind the user\'s Google 2FA?',
+    '2fa_bind_success' => 'The binding operation was successful',
+    '2fa_unbind' => 'Unbinding Google 2FA',
+    '2fa_unbind_confirm' => 'Are you sure you want to unbind the user\'s Google 2FA?',
+    '2fa_unbind_success' => 'The unbinding operation was successful',
+    'check_code_error' => 'The Google 2FA code you entered is incorrect',
+    'google_2fa' => 'Google 2FA',
+    'google_2fa_code' => 'Google 2FA code',
+    'google_2fa_code_enable_help' => 'Please enter the Google 2FA code, Only after verification is passed can you bind it',
+    'google_2fa_code_disable_button' => 'To unbind Google 2FA, please turn off the switch',
+    'google_2fa_code_disable_help' => 'Please enter the Google 2FA code, Only after verification is passed can the binding be unbound',
+    'google_2fa_code_tips' => 'Please enter the Google 2FA code (Required if set)',
+    'google_2fa_qrcode' => 'Google 2FA of QR code',
+    'google_2fa_qrcode_help' => 'To bind Google 2FA, please scan the QR code',
+    'login_code_error' => 'Login failed, the Google 2FA code is incorrect',
+    'login_need_code' => 'Login failed, please enter the Google 2FA code',
+    'login_status_false' => 'Login failed, your account has been disabled',
+    'message' => 'Message',
+    'status' => 'Account status',
+];
