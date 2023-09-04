@@ -213,4 +213,3 @@ class DcatAuthGoogle2FaAuthController extends BaseAuthController
         });
     }
 }
-

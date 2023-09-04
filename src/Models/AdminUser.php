@@ -13,9 +13,9 @@ use Dcat\Admin\Models\Administrator;
  */
 class AdminUser extends Administrator
 {
-    const STATUS_FALSE = 0;
-    const STATUS_TRUE = 1;
+    public const STATUS_FALSE = 0;
+    public const STATUS_TRUE = 1;
 
-    const GOOGLE_TWO_FA_ENABLE_FALSE = 0;
-    const GOOGLE_TWO_FA_ENABLE_TRUE = 1;
+    public const GOOGLE_TWO_FA_ENABLE_FALSE = 0;
+    public const GOOGLE_TWO_FA_ENABLE_TRUE = 1;
 }

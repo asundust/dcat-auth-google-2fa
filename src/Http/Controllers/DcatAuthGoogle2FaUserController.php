@@ -33,7 +33,7 @@ class DcatAuthGoogle2FaUserController extends UserController
                 })
                 ->qrcode(function () {
                     /* @var AdminUser $this */
-                    $google2fa = new Google2FA;
+                    $google2fa = new Google2FA();
                     return $google2fa->getQRCodeUrl(config('admin.name'), $this->username, $this->google_two_fa_secret);
                 }, 200, 200);
 
@@ -75,9 +75,9 @@ class DcatAuthGoogle2FaUserController extends UserController
                     $actions->disableDelete();
                 }
                 if ($actions->row['google_two_fa_enable']) {
-                    $actions->append(new UnbindRowAction);
+                    $actions->append(new UnbindRowAction());
                 } else {
-                    $actions->append(new BindRowAction);
+                    $actions->append(new BindRowAction());
                 }
             });
         });

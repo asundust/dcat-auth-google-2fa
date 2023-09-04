@@ -29,7 +29,7 @@ class BindRowAction extends RowAction
      */
     public function handle()
     {
-        $google2Fa = new Google2FA;
+        $google2Fa = new Google2FA();
         $secret = $google2Fa->generateSecretKey(32);
         /* @var AdminUser $user */
         $user = AdminUser::query()->find($this->getKey());
