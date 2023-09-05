@@ -163,7 +163,9 @@ class DcatAuthGoogle2FaAuthController extends BaseAuthController
 
             $form->saving(function (Form $form) {
                 /* @var Form|AdminUser $form */
-                if ($form->password && $form->model()->get('password') != $form->password) {
+                /* @var AdminUser $adminUser */
+                $adminUser = $form->model();
+                if ($form->password && $adminUser->password != $form->password) {
                     $form->password = bcrypt($form->password);
                 }
 
@@ -177,8 +179,6 @@ class DcatAuthGoogle2FaAuthController extends BaseAuthController
                         if (!$google2faCode) {
                             return $form->response()->error(DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.check_code_error'));
                         }
-                        /* @var AdminUser $adminUser */
-                        $adminUser = $form->model();
                         $google2fa = new Google2FA();
                         if (!$google2fa->verifyKey($adminUser->google_two_fa_secret, $google2faCode)) {
                             return $form->response()->error(DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.check_code_error'));
