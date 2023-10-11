@@ -17,6 +17,7 @@ use PragmaRX\Google2FA\Exceptions\IncompatibleWithGoogleAuthenticatorException;
 use PragmaRX\Google2FA\Exceptions\InvalidCharactersException;
 use PragmaRX\Google2FA\Exceptions\SecretKeyTooShortException;
 use PragmaRX\Google2FA\Google2FA;
+use PragmaRX\Google2FAQRCode\Exceptions\MissingQrCodeServiceException;
 use Symfony\Component\HttpFoundation\Response;
 
 class DcatAuthGoogle2FaAuthController extends BaseAuthController
@@ -145,6 +146,11 @@ class DcatAuthGoogle2FaAuthController extends BaseAuthController
                 $form->hidden('current_google_two_fa_enable')->value('enable');
             } else {
                 $google2fa = new \PragmaRX\Google2FAQRCode\Google2FA();
+                if (!$google2fa->getQrCodeService()) {
+                    throw new MissingQrCodeServiceException(
+                        DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.qrcode_service_tips')
+                    );
+                }
                 $googleTwoFaSecret = $google2fa->generateSecretKey(32);
                 $url = $google2fa->getQRCodeInline(config('admin.name'), $user->username, $googleTwoFaSecret);
                 $form->display('google_2fa_qrcode', DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.google_2fa_qrcode'))

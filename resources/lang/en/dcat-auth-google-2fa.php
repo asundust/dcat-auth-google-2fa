@@ -22,4 +22,5 @@ return [
     'login_status_false' => 'Login failed, your account has been disabled',
     'message' => 'Message',
     'status' => 'Account status',
+    'qrcode_service_tips' => 'You need to install a QR code service package or assign yourself the service to be used. Visit the website to view instructions. https://github.com/asundust/dcat-auth-google-2fa#%E9%87%8D%E8%A6%81%E8%AF%B4%E6%98%8E',
 ];

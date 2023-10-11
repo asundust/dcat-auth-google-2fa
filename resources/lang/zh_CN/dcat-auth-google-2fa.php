@@ -22,4 +22,5 @@ return [
     'login_status_false' => '登录失败，您的账号已禁用',
     'message' => '提示',
     'status' => '账号状态',
+    'qrcode_service_tips' => '您需要安装二维码扩展包方可正常使用，访问网址查看说明。https://github.com/asundust/dcat-auth-google-2fa#%E9%87%8D%E8%A6%81%E8%AF%B4%E6%98%8E',
 ];
