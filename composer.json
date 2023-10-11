@@ -1,7 +1,7 @@
 {
     "name": "asundust/dcat-auth-google-2fa",
     "alias": "Auth Google 2FA两步验证",
-    "description": "Dcat-Admin auth verification by Google 2FA / Dcat-Admin 登录 Google 2FA两步验证 需同步安装“bacon/bacon-qr-code”或“chillerlan/php-qrcode”",
+    "description": "Dcat-Admin auth verification by Google 2FA / Dcat-Admin 登录 Google 2FA两步验证 【需同步安装“bacon/bacon-qr-code”或“chillerlan/php-qrcode”】",
     "type": "library",
     "keywords": [
         "dcat-admin",
