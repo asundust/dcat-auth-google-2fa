@@ -9,8 +9,8 @@ Dcat-Admin 登录 Google 2FA两步验证
 
 ### 重要说明！！！
 
-- 本包依赖于![pragmarx/google2fa-qrcode](https://packagist.org/packages/pragmarx/google2fa-qrcode)，该包的二维码依赖是可选扩展包，默认支持![bacon/bacon-qr-code](https://packagist.org/packages/bacon/bacon-qr-code)、![chillerlan/php-qrcode](https://packagist.org/packages/chillerlan/php-qrcode)扩展，需要手动安装，为了兼容性考虑，请选择下方的其中一个扩展安装即可。
-- 以上参见说明：#3 ![https://github.com/antonioribeiro/google2fa-qrcode#built-in-qrcode-rendering-services](https://github.com/antonioribeiro/google2fa-qrcode#built-in-qrcode-rendering-services)
+- 本包依赖于[pragmarx/google2fa-qrcode](https://packagist.org/packages/pragmarx/google2fa-qrcode)，该包的二维码依赖是可选扩展包，默认支持[bacon/bacon-qr-code](https://packagist.org/packages/bacon/bacon-qr-code)、[chillerlan/php-qrcode](https://packagist.org/packages/chillerlan/php-qrcode)扩展，需要手动安装，为了兼容性考虑，请选择下方的其中一个扩展安装即可。
+- 以上参见说明：[#3](https://github.com/asundust/dcat-auth-google-2fa/issues/3) [https://github.com/antonioribeiro/google2fa-qrcode#built-in-qrcode-rendering-services](https://github.com/antonioribeiro/google2fa-qrcode#built-in-qrcode-rendering-services)
 ```
 composer require bacon/bacon-qr-code
 ```
