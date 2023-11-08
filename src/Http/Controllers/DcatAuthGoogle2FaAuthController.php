@@ -152,22 +152,15 @@ class DcatAuthGoogle2FaAuthController extends BaseAuthController
                     );
                 }
                 $googleTwoFaSecret = $google2fa->generateSecretKey(32);
-                $url = $google2fa->getQRCodeInline(config('admin.name'), $user->username, $googleTwoFaSecret);
+                $url = $google2fa->getQRCodeInline(config('admin.name'), $user->username, $googleTwoFaSecret, 330);
                 $form->display('google_2fa_qrcode', DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.google_2fa_qrcode'))
                     ->help(DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.google_2fa_qrcode_help'))
-                    ->width(2)
+                    ->width(3)
                     ->with(function () use ($url, $google2fa) {
-                        if (
-                            class_exists('BaconQrCode\Writer') &&
-                            class_exists('BaconQrCode\Renderer\ImageRenderer')
-                        ) {
-                            return $url;
-                        } elseif (class_exists('chillerlan\QRCode\QRCode')) {
+                        if (strpos($url, ';base64,') !== false) {
                             return '<img src="' . $url . '" />';
                         } else {
-                            throw new MissingQrCodeServiceException(
-                                DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.qrcode_service_tips')
-                            );
+                            return $url;
                         }
                     });
                 $form->text('google_2fa_code', DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.google_2fa_code'))
