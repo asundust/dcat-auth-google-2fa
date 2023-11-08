@@ -26,8 +26,8 @@ composer require asundust/dcat-auth-google-2fa
 
 ### 说明
 
-- 本应用暂不支持`1.*`版本，也不考虑支持。
-- `1.*`版本可以使用[https://github.com/changzhong/extension-google-authenticator](https://github.com/changzhong/extension-google-authenticator)
+- 本应用暂不支持`Dact-Admin``1.*`版本，也不考虑支持。
+- `Dact-Admin``1.*`版本可以使用[https://github.com/changzhong/extension-google-authenticator](https://github.com/changzhong/extension-google-authenticator)
 - 本项目也是因为看到目前插件空缺才补上，代码参考上述项目。
 
 ### 主要功能
