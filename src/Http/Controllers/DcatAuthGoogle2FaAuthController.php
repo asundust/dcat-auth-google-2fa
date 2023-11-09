@@ -152,10 +152,10 @@ class DcatAuthGoogle2FaAuthController extends BaseAuthController
                     );
                 }
                 $googleTwoFaSecret = $google2fa->generateSecretKey(32);
-                $qrcode = $google2fa->getQRCodeInline(config('admin.name'), $user->username, $googleTwoFaSecret, 330);
+                $qrcode = $google2fa->getQRCodeInline(config('admin.name'), $user->username, $googleTwoFaSecret);
                 $form->display('google_2fa_qrcode', DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.google_2fa_qrcode'))
                     ->help(DcatAuthGoogle2FaServiceProvider::trans('dcat-auth-google-2fa.google_2fa_qrcode_help'))
-                    ->width(3)
+                    ->width(4)
                     ->with(function () use ($qrcode, $google2fa) {
                         if (strpos($qrcode, ';base64,') !== false) {
                             return '<img src="' . $qrcode . '" />';
